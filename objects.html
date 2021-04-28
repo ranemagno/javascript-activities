@@ -28,26 +28,27 @@
 		</thead>
 		<tbody>
 			<!-- Data Goes Here -->
-			<tr>
-				<td id="firstNameActor">John</td>
-				<td id="lastNameActor">Doe</td>
-				<td id="movieActor">Gump Forest</td>
-				<td id="ageActor">40</td>
+			<tr id="actor">
+				<td id="firstName">John</td>
+				<td id="lastName">Doe</td>
+				<td id="movie">Gump Forest</td>
+				<td id="age">40</td>
 			</tr>
-			<tr>
-				<td id="firstNameActress">John</td>
-				<td id="lastNameActress">Doe</td>
-				<td id="movieActress">Gump Forest</td>
-				<td id="ageActress">40</td>
+			<tr id="actress">
+				<td id="firstName">John</td>
+				<td id="lastName">Doe</td>
+				<td id="movie">Gump Forest</td>
+				<td id="age">40</td>
 			</tr>
-			<tr>
-				<td id="firstNameDirector">John</td>
-				<td id="lastNameDirector">Doe</td>
-				<td id="movieDirector">Gump Forest</td>
-				<td id="ageDirector">40</td>
+			<tr id="director">
+				<td id="firstName">John</td>
+				<td id="lastName">Doe</td>
+				<td id="movie">Gump Forest</td>
+				<td id="age">40</td>
 			</tr>
 		</tbody>
 	</table>
+	<button id="btn" onclick="updateTable()">Update Table</button>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 
 	<script>
@@ -73,48 +74,50 @@
 					age: 51
 		};
 
+		function updateTable () {
+			updateActorInfo ();
+			updateActressInfo ();
+			updateDirectorInfo ();
+		};
 
-		// First Name
-		var getFirstNameActor = document.querySelector('#firstNameActor');
-		getFirstNameActor.textContent = person1.firstName;
+		function updateActorInfo () {
+			var getFirstNameActor = document.querySelector('#actor #firstName');
+			var getLastNameActor = document.querySelector('#actor #lastName');
+			var getMovieActor = document.querySelector('#actor #movie');
+			var getAgeActor = document.querySelector('#actor #age');
 
-		var getFirstNameActress = document.querySelector('#firstNameActress');
-		getFirstNameActress.textContent = person2.firstName;
+			getFirstNameActor.textContent = person1.firstName;
+			getLastNameActor.textContent = person1.lastName;
+			getMovieActor.textContent = person1.movies[0];
+			getAgeActor.textContent = person1.age;
+		};
 
-		var getFirstNameDirector = document.querySelector('#firstNameDirector');
-		getFirstNameDirector.textContent = person3.firstName;
+		function updateActressInfo () {
+			var getFirstNameActress = document.querySelector('#actress #firstName');
+			var getLastNameActress = document.querySelector('#actress #lastName');
+			var getMovieActress = document.querySelector('#actress #movie');
+			var getAgeActress = document.querySelector('#actress #age');
 
-		// Lastname
-		var getLastNameActor = document.querySelector('#lastNameActor');
-		getLastNameActor.textContent = person1.lastName;
+			getFirstNameActress.textContent = person2.firstName;
+			getLastNameActress.textContent = person2.lastName;
+			getMovieActress.textContent = person2.movies[0];
+			getAgeActress.textContent = person2.age;
+		};
 
-		var getLastNameActress = document.querySelector('#lastNameActress');
-		getLastNameActress.textContent = person2.lastName;
+		function updateDirectorInfo () {
+			var getFirstNameDirector = document.querySelector('#director #firstName');
+			var getLastNameDirector = document.querySelector('#director #lastName');
+			var getMovieDirector = document.querySelector('#director #movie');
+			var getAgeDirector = document.querySelector('#director #age');
 
-		var getLastNameDirector = document.querySelector('#lastNameDirector');
-		getLastNameDirector.textContent = person3.lastName;
+			getFirstNameDirector.textContent = person3.firstName;
+			getLastNameDirector.textContent = person3.lastName;
+			getMovieDirector.textContent = person3.movies[0];
+			getAgeDirector.textContent = person3.age;
+		}
 
-		// Movie
-		var getMovieActor = document.querySelector('#movieActor');
-		getMovieActor.textContent = person1.movies[0];
-
-		var getMovieActress = document.querySelector('#movieActress');
-		getMovieActress.textContent = person2.movies[0];
-
-		var getMovieDirector = document.querySelector('#movieDirector');
-		getMovieDirector.textContent = person3.movies[0];
-
-		// Age
-		var getAgeActor = document.querySelector('#ageActor');
-		getAgeActor.textContent = person1.age;
-
-		var getAgeActress = document.querySelector('#ageActress');
-		getAgeActress.textContent = person2.age;
-
-		var getAgeDirector = document.querySelector('#ageDirector');
-		getAgeDirector.textContent = person3.age;
-
-
+		// Console log all query values
+		console.log(document.querySelectorAll('#firstName'));
 
 	</script>
 </body>
