@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Objects</title>
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<style>
+		/* CSS Here */
+		body {
+			margin: 5%;
+		}
+		.a-sentence {
+			margin: 75px 0px;
+		}
+	</style>
+</head>
+<body>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Firstname</th>
+				<th>Lastname</th>
+				<th>Movie</th>
+				<th>Age</th>
+			</tr>
+		</thead>
+		<tbody>
+			<!-- Data Goes Here -->
+			<tr>
+				<td id="firstNameActor">John</td>
+				<td id="lastNameActor">Doe</td>
+				<td id="movieActor">Gump Forest</td>
+				<td id="ageActor">40</td>
+			</tr>
+			<tr>
+				<td id="firstNameActress">John</td>
+				<td id="lastNameActress">Doe</td>
+				<td id="movieActress">Gump Forest</td>
+				<td id="ageActress">40</td>
+			</tr>
+			<tr>
+				<td id="firstNameDirector">John</td>
+				<td id="lastNameDirector">Doe</td>
+				<td id="movieDirector">Gump Forest</td>
+				<td id="ageDirector">40</td>
+			</tr>
+		</tbody>
+	</table>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+
+	<script>
+
+		var person1 = {
+				firstName: 'Keanu',
+				lastName: 'Reeves',
+				movies: ['The Matrix', 'John Wick', 'Toy Story 4'],
+				age: 56
+		};
+
+		var person2 = {
+				firstName: 'Meryl',
+				lastName: 'Streep',
+				movies: ['Mamma Mia', 'The Devil Wears Prada', 'Into the Woods'],
+				age: 71
+		};
+
+		var person3 = {
+					firstName: 'Wes',
+					lastName: 'Anderson',
+					movies: ['Fantastic Mr. Fox', 'The Grand Budapest Hotel', 'Isle of Dogs'],
+					age: 51
+		};
+
+
+		// First Name
+		var getFirstNameActor = document.querySelector('#firstNameActor');
+		getFirstNameActor.textContent = person1.firstName;
+
+		var getFirstNameActress = document.querySelector('#firstNameActress');
+		getFirstNameActress.textContent = person2.firstName;
+
+		var getFirstNameDirector = document.querySelector('#firstNameDirector');
+		getFirstNameDirector.textContent = person3.firstName;
+
+		// Lastname
+		var getLastNameActor = document.querySelector('#lastNameActor');
+		getLastNameActor.textContent = person1.lastName;
+
+		var getLastNameActress = document.querySelector('#lastNameActress');
+		getLastNameActress.textContent = person2.lastName;
+
+		var getLastNameDirector = document.querySelector('#lastNameDirector');
+		getLastNameDirector.textContent = person3.lastName;
+
+		// Movie
+		var getMovieActor = document.querySelector('#movieActor');
+		getMovieActor.textContent = person1.movies[0];
+
+		var getMovieActress = document.querySelector('#movieActress');
+		getMovieActress.textContent = person2.movies[0];
+
+		var getMovieDirector = document.querySelector('#movieDirector');
+		getMovieDirector.textContent = person3.movies[0];
+
+		// Age
+		var getAgeActor = document.querySelector('#ageActor');
+		getAgeActor.textContent = person1.age;
+
+		var getAgeActress = document.querySelector('#ageActress');
+		getAgeActress.textContent = person2.age;
+
+		var getAgeDirector = document.querySelector('#ageDirector');
+		getAgeDirector.textContent = person3.age;
+
+
+
+	</script>
+</body>
+</html>

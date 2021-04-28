@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Arrays</title>
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<style>
+		/* CSS Here */
+		body {
+			margin: 5%;
+		}
+		.a-sentence {
+			margin: 75px 0px;
+		}
+	</style>
+</head>
+<body>
+	<h1 class="a-sentence">
+		<span id="one">This</span>
+		<span id="two">is</span>
+		<span id="three">a</span>
+		<span id="three">sentence</span>
+		<span id="four">that</span>
+		<span id="five">lives</span>
+		<span id="six">within</span>
+		<span id="seven">many</span>
+		<span id="eight">spans</span>
+		<span id="nine">on</span>
+		<span id="ten">an</span>
+		<span id="eleven">html</span>
+		<span id="twelve">page</span>
+	</h1>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Firstname</th>
+				<th>Lastname</th>
+				<th>Movie</th>
+				<th>Age</th>
+			</tr>
+		</thead>
+		<tbody>
+			<!-- Data Goes Here -->
+			<tr>
+				<td>John</td>
+				<td>Doe</td>
+				<td>Gump Forrest</td>
+				<td>40</td>
+			</tr>
+			<tr>
+				<td>John</td>
+				<td>Doe</td>
+				<td>Gump Forrest</td>
+				<td>40</td>
+			</tr>
+			<tr>
+				<td>John</td>
+				<td>Doe</td>
+				<td>Gump Forrest</td>
+				<td>40</td>
+			</tr>
+			<tr>
+				<td>John</td>
+				<td>Doe</td>
+				<td>Gump Forrest</td>
+				<td>40</td>
+			</tr>
+		</tbody>
+	</table>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+	<script>
+	// var a = 'I '
+	// var b = 'Think '
+	// var c = 'Its '
+	// var d = 'Wednesday '
+	// console.log(a + b + c + d);
+	//
+	// var a = 20;
+	// var b = 30;
+	//
+	// console.log(a + b)
+	// var theArray = ['banana', 5, 'armygreen', true ];
+	//
+	// console.log(theArray[2]);
+
+
+
+	// Array Puzzle
+	// Set up the array
+	// var theArray2 = ['am ', 'very ', 'this ', 'confused ', 'very ', 'I ', 'difficult ', 'help ', 'need ', 'I ', 'is '];
+
+	// Push into array
+	// theArray2.push('Cool Beans');
+
+	// Solving puzzle
+	// console.log(theArray2[5] + theArray2[0] + theArray2[1] + theArray2[3] + theArray2[2] + theArray2[10] + theArray2[6] + theArray2[9] + theArray2[8] + theArray2[7] + theArray2[11]);
+
+	// Removing last element of array
+	// theArray2.pop();
+
+	// Viewing whole array
+	// console.log(theArray2);
+
+
+
+
+
+	// 1. Make the function
+	function updateTheHtml () {
+		console.log('working');
+		// do stuff
+
+		// Displaying on DOM
+		var text = ["HTML", "is", "a", "really", "cool", "language", "that", "has", "many", "different", "functions", "yay"];
+
+		// var textOne = text[0];
+		document.getElementById("one").innerHTML = text[0];
+		document.getElementById("two").innerHTML = text[1];
+		document.getElementById("three").innerHTML = text[2];
+		document.getElementById("four").innerHTML = text[3];
+		document.getElementById("five").innerHTML = text[4];
+		document.getElementById("six").innerHTML = text[5];
+		document.getElementById("seven").innerHTML = text[6];
+		document.getElementById("eight").innerHTML = text[7];
+		document.getElementById("nine").innerHTML = text[8];
+		document.getElementById("ten").innerHTML = text[9];
+		document.getElementById("eleven").innerHTML = text[10];
+		document.getElementById("twelve").innerHTML = text[11];
+	};
+
+	// 2. Fire the function
+	updateTheHtml();
+
+	</script>
+</body>
+</html>
