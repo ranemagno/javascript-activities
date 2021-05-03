@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Conditionals Basics</title>
+</head>
+<body>
+  <h1>Welcome</h1>
+  <p>Start</p>
+  <button onclick="makeFalse()">Make False</button>
+  <button onclick="makeTrue()">Make True</button>
+</body>
+  <script>
+
+  // logic vars
+    var isTrue = true;
+    var isFalse = false;
+    var priceA = 5;
+    var priceB = 10;
+
+    var falsy = [false, 0, '', "", null, undefined, NaN];
+    var truthy = ['0', 'false', 'everything else']
+    var truthyEmptyArray = [];
+    var truthyEmptyObject = {};
+
+
+  // === is strict
+  // == is lazy and will let strings be numbers etc
+  //   if (priceA === '5'){
+  //     alert('not working')
+  //   } else if (priceA == '5') {
+  //     alert('working')
+  //   } else {
+  //     alert('nothing is working');
+  //   };
+  //
+  // // Testing Values
+  //   if (falsy[2]) {
+  //     alert('True Value')
+  //   } else {
+  //     alert('False Value')
+  //   };
+  //
+  //   if (isTrue){
+  //     makeTrue();
+  //   } else {
+  //     makeFalse();
+  //   }
+  //
+  //   function makeFalse () {
+  //     var para = document.querySelector('p');
+  //     para.textContent = 'false';
+  //     console.log(para.textContent);
+  //
+  //   }
+  //   function makeTrue () {
+  //     var para = document.querySelector('p');
+  //     para.textContent = 'true';
+  //     console.log(para.textContent);
+  //   }
+  function checkName () {
+    var name = prompt ("What is your name?");
+    if (name === ''){
+      var name = prompt ("Please input a name");
+    } else {
+      alert("Hello " + name);
+    }
+  }
+  checkName();
+
+  // function guessMyAge () {
+  //   alert("Let's play a little game.");
+  //   var correctAge = Math.floor(Math.random() * 50);
+  //   console.log(correctAge);
+  //   var guessedAge = prompt ("Guess my age!");
+  //
+  //   if (guessedAge == correctAge){
+  //     alert('Congratulations! You guessed right, I am ' + correctAge +  ' years old!')
+  //   } else {
+  //     alert('You guessed wrong');
+  //     var giveHint = confirm('Would you like a hint?');
+  //     if (giveHint === true) {
+  //       alert("I am older than " + (correctAge-5) + " years old")
+  //       var guessedAge = prompt ("Have another guess");
+  //     }
+  //   }
+  //
+  //   var guessedAge = prompt ("Have another guess");
+  //   if (guessedAge == correctAge) {
+  //     alert('Congrats! You are right!');
+  //   } else {
+  //     alert('Nice try! I was ' + correctAge);
+  //   }
+  // }
+  // guessMyAge();
+
+  function quiz (){
+    var correctAnswers = 0;
+    var q1 = prompt('5 x 5');
+    var q2 = prompt('8 x 6');
+    var q3 = prompt('3 x 7');
+    var q4 = prompt('9 x 4');
+    var q5 = prompt('6 x 6');
+
+    if (q1 == 25) {
+      correctAnswers++;
+    }
+    if (q2 == 48) {
+      correctAnswers++;
+    }
+    if (q3 == 21) {
+      correctAnswers++;
+    }
+    if (q4 == 36) {
+      correctAnswers++;
+    }
+    if (q5 == 36) {
+      correctAnswers++;
+    }
+
+    alert(name + ' you got ' + correctAnswers + ' out of 5 in this quiz');
+
+  }
+  quiz();
+
+  </script>
+</html>

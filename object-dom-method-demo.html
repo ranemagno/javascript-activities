@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Object Methods</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;0,700;1,500&display=swap" rel="stylesheet">
+
+  <style>
+  body {
+    text-align: center;
+  }
+  h1, p, a {
+    font-family: 'Roboto', sans-serif;
+
+  }
+    h1 {
+      font-weight: 700;
+    }
+    p {
+      font-weight: 300;
+    }
+    a {
+      font-weight: 500;
+    }
+    .container {
+      height: 80vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    button {
+      margin: 30% 0 0 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="hotel">
+      <h1 id="hotelName">Hotel Name</h1>
+      <p id="location">Location</p>
+      <p id="availability"> Availability</p>
+      <p id="facilities">Facilities</p>
+      <button id="btnUpdate" onclick='updatePage()'>Update Page</button>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+
+
+  <script>
+
+    var hotel = {
+      name: 'Peppers Soul Surfers Paradise',
+      location: '8 The Esplanade',
+      availability: 'Available',
+      facilities: ['Pool', ' Spa', ' Garden', ' BBQ'],
+      updateData: function(){
+        var getHotelName = document.querySelector('#hotelName');
+        var getLocation = document.querySelector('#location');
+        var getAvailability = document.querySelector('#availability');
+        var getFacilities = document.querySelector('#facilities');
+
+        getHotelName.textContent = hotel.name;
+        getLocation.textContent = hotel.location;
+        getAvailability.textContent = hotel.availability;
+        getFacilities.textContent = hotel.facilities;
+      }
+    };
+
+    function updatePage () {
+      hotel.updateData();
+    }
+
+  </script>
+
+
+</body>
+</html>
