@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Conditional Test</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;800&display=swap" rel="stylesheet">
+
+  <style>
+    .container {
+      height: 80vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .content {
+      text-align: center;
+    }
+    h1, h2 {
+      font-family: 'Open Sans', sans-serif;
+    }
+    h1 {
+      line-height: 1rem;
+      font-size: 10rem;
+      font-weight: 800;
+    }
+    h2 {
+      font-weight: 300;
+      letter-spacing: 1rem;
+      text-transform: uppercase;
+    }
+  </style>
+
+</head>
+<body>
+  <div class="container">
+    <div class="content">
+      <div class="results">
+        <h1><a id="testResults">5</a>/5</h1>
+        <br>
+        <h2><a id="name">Your</a>'s Results</h2>
+      </div>
+      <br>
+      <button id="btnStart" onclick="checkName()">Start Quiz</button>
+    </div>
+  </div>
+</body>
+
+
+<script>
+
+  var displayResults = document.querySelector('.results');
+  displayResults.style.display = "none";
+  // hide button
+  var name = prompt ("What is your name?");
+  checkName(name);
+
+  // Name Validation -----------------------------------------------------------
+  function checkName () {
+    if (name === ''){
+      name = prompt ("Please input a name");
+      if (name !== '') {
+        alert("Hello " + name);
+        quiz(name);
+      }
+    } else {
+      alert("Hello " + name);
+    }
+  };
+
+  quiz(name, displayResults);
+
+  // Start of quiz -------------------------------------------------------------
+  function quiz (name){
+    var correctAnswers = 0;
+    alert('Here are the questions!');
+
+    // parseInt changes string into a number
+    var q1 = parseInt(prompt('1. 5 x 5'));
+    var q2 = prompt('2. What is the capital of Mozambique?');
+    var q3 = prompt('3. What is a color that is part of the rainbow?');
+    var q4 = prompt('4. 9 x 4');
+    var q5 = parseInt(prompt('Final Question. Hold old am I?'));
+    var correctAge = Math.floor(Math.random() * 50);
+    var randomNum = Math.floor(Math.random() * 5);
+
+    if (q1 === 25) {
+      correctAnswers++;
+    }
+    if (q2 == 'Maputo' || q2 == 'maputo') {
+      correctAnswers++;
+    }
+    if (q3 == 'red' || q3 == 'orange' || q3 == 'yellow' || q3 == 'green' || q3 == 'blue' || q3 == 'indigo' || q3 == 'violet') {
+      correctAnswers++;
+    }
+    if (q4 == '36') {
+      correctAnswers++;
+    }
+
+    // Q5
+    if (q5 === correctAge){
+      alert('Congratulations! You guessed right, I am ' + correctAge +  ' years old!');
+      correctAnswers++;
+    } else if (q5 > correctAge){
+      alert('You guessed wrong, I am younger');
+      var q5 = parseInt(prompt('Have one more guess'));
+      if (q5 == correctAge) {
+        alert('Congrats! You are right!');
+        correctAnswers++;
+      } else {
+        alert('Nice try! I am ' + correctAge);
+      }
+    } else {
+      alert('You guessed wrong, I am older');
+      var q5 = parseInt(prompt('Have one more guess'));
+      if (q5 == correctAge) {
+        alert('Congrats! You are right!');
+        correctAnswers++;
+      } else {
+        alert('Nice try! I am ' + correctAge);
+      }
+    }
+    alert(name + ' you got ' + correctAnswers + ' out of 5 in this quiz');
+    finishTest(name, correctAnswers);
+  }
+
+  function finishTest(name, correctAnswers){
+    var testResults = document.querySelector('#testResults');
+    var testerName = document.querySelector('#name');
+    testResults.textContent = correctAnswers;
+    testerName.textContent = name;
+    displayResults.style.display = "block";
+  }
+  // End of Quiz
+</script>
+</html>

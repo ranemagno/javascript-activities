@@ -60,70 +60,32 @@
   //     para.textContent = 'true';
   //     console.log(para.textContent);
   //   }
-  function checkName () {
-    var name = prompt ("What is your name?");
-    if (name === ''){
-      var name = prompt ("Please input a name");
+
+  function guessMyAge () {
+    alert("Let's play a little game.");
+    var correctAge = Math.floor(Math.random() * 50);
+    var randomNum = Math.floor(Math.random() * 5);
+    console.log(correctAge);
+    var guessedAge = prompt ("Guess my age! First hint - I am less than 100yrs old :)");
+
+    if (guessedAge == correctAge){
+      alert('Congratulations! You guessed right, I am ' + correctAge +  ' years old!')
     } else {
-      alert("Hello " + name);
+      alert('You guessed wrong');
+      var giveHint = confirm('Would you like a hint?');
+      if (giveHint === true) {
+        alert("I am older than " + (correctAge-randomNum) + " years old")
+        guessedAge = prompt ("Have another guess");
+      }
+    }
+
+    // var guessedAge = prompt ("Have another guess");
+    if (guessedAge == correctAge) {
+      alert('Congrats! You are right!');
+    } else {
+      alert('Nice try! I was ' + correctAge);
     }
   }
-  checkName();
-
-  // function guessMyAge () {
-  //   alert("Let's play a little game.");
-  //   var correctAge = Math.floor(Math.random() * 50);
-  //   console.log(correctAge);
-  //   var guessedAge = prompt ("Guess my age!");
-  //
-  //   if (guessedAge == correctAge){
-  //     alert('Congratulations! You guessed right, I am ' + correctAge +  ' years old!')
-  //   } else {
-  //     alert('You guessed wrong');
-  //     var giveHint = confirm('Would you like a hint?');
-  //     if (giveHint === true) {
-  //       alert("I am older than " + (correctAge-5) + " years old")
-  //       var guessedAge = prompt ("Have another guess");
-  //     }
-  //   }
-  //
-  //   var guessedAge = prompt ("Have another guess");
-  //   if (guessedAge == correctAge) {
-  //     alert('Congrats! You are right!');
-  //   } else {
-  //     alert('Nice try! I was ' + correctAge);
-  //   }
-  // }
-  // guessMyAge();
-
-  function quiz (){
-    var correctAnswers = 0;
-    var q1 = prompt('5 x 5');
-    var q2 = prompt('8 x 6');
-    var q3 = prompt('3 x 7');
-    var q4 = prompt('9 x 4');
-    var q5 = prompt('6 x 6');
-
-    if (q1 == 25) {
-      correctAnswers++;
-    }
-    if (q2 == 48) {
-      correctAnswers++;
-    }
-    if (q3 == 21) {
-      correctAnswers++;
-    }
-    if (q4 == 36) {
-      correctAnswers++;
-    }
-    if (q5 == 36) {
-      correctAnswers++;
-    }
-
-    alert(name + ' you got ' + correctAnswers + ' out of 5 in this quiz');
-
-  }
-  quiz();
-
+  guessMyAge();
   </script>
 </html>
