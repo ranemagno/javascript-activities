@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<style>
+		form {
+			width: 80%;
+			margin: 0 auto;
+		}
+
+		h2 {
+			text-align: center;
+		}
+
+		.order-panel,
+		.confirmation-panel {
+			text-align: center;
+			float: left;
+			width: 49%;
+			min-height: 75vh;
+			margin: 5px;
+			background-color: #efefef;
+		}
+
+	</style>
+	<title>Order Form</title>
+</head>
+<body>
+	<div class="order-panel">
+		<h2>Order Form</h2>
+				<div class="form-group">
+					<label for="customer-name">Name</label>
+					<input class="form-control" id="customerName" placeholder="Your Name Here...">
+				</div>
+
+				<div class="form-group">
+					<label for="burger">Burger</label>
+					<select class="form-control" id="burger">
+						<option>Hamburger $2.50</option>
+						<option>Vegeterian Burger $5.00</option>
+						<option>Fish Burger $6.50</option>
+						<option>Steak Burger $9.99</option>
+						<option>Tofu Burger $3.00</option>
+					</select>
+				</div>
+
+				<div class="form-group">
+					<label for="drink">Drink</label>
+					<select class="form-control" id="drink">
+						<option>Coca Cola $2.50</option>
+						<option>Pepsi $2.50</option>
+						<option>Sprite $2.50</option>
+						<option>L&P $2.50</option>
+						<option>Apple Juice $3.00</option>
+					</select>
+				</div>
+
+			<button class="btn btn-primary" onclick="updateDetails()">Order</button>
+	</div>
+
+	<div class="confirmation-panel">
+		<h2>Order Details</h2>
+		<h3 id="custNameResult"></h3>
+		<h3 id="burgerResult"></h3>
+		<h3 id="drinkResult"></h3>
+		<h3 id="totalResult"></h3>
+		<h3></h3>
+		<h3></h3>
+
+	</div>
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script>
+		// jquery
+		// $(window).ready(function(){
+		//
+		// });
+
+		// vanilla js version of window ready
+		// (function(){
+		//
+		// }());
+
+		// Find Value
+		// console.dir(getCustName);
+		// console.dir(getCustName.value);
+		// console.dir(getBurger);
+		// console.dir(getBurger.value);
+
+		// Steps
+		// set up click event for order button
+		// get the info from input #customName
+		// display the info on  DOM
+		// calculate total
+
+
+		function updateDetails (){
+			var getCustName = document.querySelector('#customerName');
+			var getBurger = document.querySelector('#burger');
+			var getDrink = document.querySelector('#drink');
+
+
+			// Get Customer Name
+			var custNameResult = document.querySelector('#custNameResult');
+			custNameResult.textContent = getCustName.value;
+
+			// Get Burger Prices
+			var burgerResult = document.querySelector('#burgerResult');
+			hamburgerPrice = getBurger.value;
+			var getBurgerPrice = hamburgerPrice.split("$");
+			burgerResult.textContent = 'Burger - ' + getBurgerPrice[0];
+
+			// Get Drink Price
+			var drinkResult = document.querySelector('#drinkResult');
+			drinkPrice = getDrink.value;
+			var getDrinkPrice = drinkPrice.split("$");
+			drinkResult.textContent = 'Drink - ' + getDrinkPrice[0];
+
+
+			// Show Total
+			var totalResult = document.querySelector('#totalResult');
+			var burgerPrice = parseFloat(getBurgerPrice[1]);
+			var drinkPrice = parseFloat(getDrinkPrice[1]);
+			var total = burgerPrice + drinkPrice;
+
+			// Change Value/Add 0 to end
+			var totalText = total.toString();
+			if (totalText.length <= 1) {
+				totalResult.textContent = 'Total - $' + total + '.00';
+			} else if (totalText.length == 3){
+				totalResult.textContent = 'Total - $' + total + '0';
+			} else {
+				totalResult.textContent = 'Total - $' + total;
+			}
+		}
+		// End of function
+	</script>
+</body>
+</html>
