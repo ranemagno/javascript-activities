@@ -50,11 +50,11 @@
 	<button id="fishUpdate" onclick="updateFishes()">Update Fishes</button>
 
 	<p id="para">
-		<span>1</span>
-		<span>2</span>
-		<span>3</span>
-		<span>4</span>
-		<span>5</span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
 	</p>
 
 
@@ -90,7 +90,6 @@
 				for (var i = 0; i < fishes.length; i++) {
 					if (fishes[i] === 'Orange Roughy'){
 						fishList[i].textContent = fishes[i] + ' - ' + myRating[1];
-						console.log('WORKING')
 					};
 					if (fishes[i] === 'John Dory'){
 						fishList[i].textContent = fishes[i] + ' - ' + myRating[0];

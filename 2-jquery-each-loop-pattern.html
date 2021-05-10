@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Jquery Each Method Task</title>
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<style>
+		/* CSS Here */
+		ul {
+			margin: 25px;
+			border: 1px solid;
+		}
+		ul li {
+			font-size: 44px;
+			font-weight: 400;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li class="target">One</li>
+		<li>Two</li>
+		<li class="target">Three</li>
+		<li>Four</li>
+		<li class="target">Five</li>
+		<li>Six</li>
+		<li>Seven</li>
+		<li class="target">Eight</li>
+		<li>Nine</li>
+		<li class="target">Ten</li>
+	</ul>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+	<script>
+	// More info at: https://api.jquery.com/each/
+	// Using the jQuery .each method, this allows coders to easily loop through items
+	// in html/DOM.
+	// **Task -- A. Change all of the .target divs font size and color with jquery below, use the 'element' as a reference
+		 // **Task -- B. Change the text of all the li divs to be replaced by the index number from the each loop
+		$(document).ready(function(){
+
+			$( ".target" ).each(function( index, element ) {
+				// The each function provides 2 arguments - index & element
+			  console.log(index); // index represents a number
+			  console.log(element); // element represents all the matched elements found in the loop
+				$(element).css('color', 'green');
+				$(element).css('font-size', '8rem');
+			  // A. Clue:
+			  // $(el*****).c**('color', 'green');
+			  // Then font size change here...similar to line of code above
+			});
+
+			// B. Clue:
+
+			$( "li" ).each(function( index, element ) {
+				// The each function provides 2 arguments - index & element
+			  console.log(index); // index represents a number
+			  console.log(element); // element represents all the matched elements found in the loop
+				$(element).text(index);
+
+			  // HTML should change to this by using index as the reference:
+			  // <li class="target">1</li>
+			  // <li>2</li>
+			  // <li class="target">3</li>...and so on.
+
+			  // A. Clue:
+			  // https://api.jquery.com/text/ in combination with index
+			});
+
+		}); // Document Ready ENDS
+
+
+	</script>
+</body>
+</html>

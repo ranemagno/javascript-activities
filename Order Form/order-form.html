@@ -39,11 +39,11 @@
 				<div class="form-group">
 					<label for="burger">Burger</label>
 					<select class="form-control" id="burger">
-						<option>Hamburger $2.50</option>
+						<option>Hamburger $5.00</option>
 						<option>Vegeterian Burger $5.00</option>
-						<option>Fish Burger $6.50</option>
-						<option>Steak Burger $9.99</option>
-						<option>Tofu Burger $3.00</option>
+						<option>Fish Burger $7.50</option>
+						<option>Steak Burger $19.99</option>
+						<option>Tofu Burger $4.50</option>
 					</select>
 				</div>
 
@@ -58,6 +58,17 @@
 					</select>
 				</div>
 
+				<div class="form-group">
+				<label for="sides">Sides</label>
+					<select class="form-control" id="sides">
+						<option>Fries $2.50</option>
+						<option>Hash Brown $3.00</option>
+						<option>Salad $3.50</option>
+						<option>Chicken Nuggets $3.50</option>
+						<option>Soft Serve $1.50</option>
+					</select>
+				</div>
+
 			<button class="btn btn-primary" onclick="updateDetails()">Order</button>
 	</div>
 
@@ -66,14 +77,13 @@
 		<h3 id="custNameResult"></h3>
 		<h3 id="burgerResult"></h3>
 		<h3 id="drinkResult"></h3>
+		<h3 id="sideResult"></h3>
 		<h3 id="totalResult"></h3>
-		<h3></h3>
-		<h3></h3>
-
 	</div>
 
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script src="data.js"></script>
 	<script>
 		// jquery
 		// $(window).ready(function(){
@@ -104,6 +114,8 @@
 			var getCustName = document.querySelector('#customerName');
 			var getBurger = document.querySelector('#burger');
 			var getDrink = document.querySelector('#drink');
+			var getSides = document.querySelector('#sides');
+
 
 
 			// Get Customer Name
@@ -122,12 +134,18 @@
 			var getDrinkPrice = drinkPrice.split("$");
 			drinkResult.textContent = 'Drink - ' + getDrinkPrice[0];
 
+			// Get Side Price
+			var sideResult = document.querySelector('#sideResult');
+			sidePrice = getSides.value;
+			var getSidePrice = sidePrice.split("$");
+			sideResult.textContent = 'Side - ' + getSidePrice[0];
 
 			// Show Total
 			var totalResult = document.querySelector('#totalResult');
 			var burgerPrice = parseFloat(getBurgerPrice[1]);
 			var drinkPrice = parseFloat(getDrinkPrice[1]);
-			var total = burgerPrice + drinkPrice;
+			var sidePrice = parseFloat(getSidePrice[1]);
+			var total = burgerPrice + drinkPrice + sidePrice;
 
 			// Change Value/Add 0 to end
 			var totalText = total.toString();
@@ -138,6 +156,8 @@
 			} else {
 				totalResult.textContent = 'Total - $' + total;
 			}
+
+			console.log(promo);
 		}
 		// End of function
 	</script>

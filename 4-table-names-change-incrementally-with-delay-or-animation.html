@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Loops</title>
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<style>
+		/* CSS Here */
+		table {
+			margin: 4em;
+			width: 80% !important;
+		}
+		.wrapper {
+			text-align: center;
+		}
+		button {
+			margin-top: 25px;
+		}
+	</style>
+</head>
+<body>
+
+	<table class="table">
+	  <thead>
+	    <tr>
+	      <th scope="col">#</th>
+	      <th scope="col">First</th>
+	      <th scope="col">Last</th>
+	      <th scope="col">Handle</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <th scope="row">1</th>
+	      <td class="change-it">Mark</td>
+	      <td>Otto</td>
+	      <td>@mdo</td>
+	    </tr>
+	    <tr>
+	      <th scope="row">2</th>
+	      <td>Jacob</td>
+	      <td class="change-it">Thornton</td>
+	      <td>@fat</td>
+	    </tr>
+	    <tr>
+	      <th scope="row">3</th>
+	      <td>Larry</td>
+	      <td class="change-it">the Bird</td>
+	      <td>@twitter</td>
+	    </tr>
+	  </tbody>
+	</table>
+
+	<div class="wrapper">
+		<button class="changing">Change Names</button>
+	</div>
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+	<script>
+	// More info at: https://api.jquery.com/each/
+
+	// **Task -- A. Finish the code below so....
+				// 1. Complete the click event so when the user clicks the button
+				// 2. The run the loop function runs
+				// 3. Then make each tabel cell change incrementally (one after another) with an animation
+				// Clue: Use fadeIn/fadeOut, callback function and chaining
+
+				// See clues or solution file if you are stuck
+
+		$(document).ready(function(){
+
+			// Clue, the array index will relate directly to the following .each loop index
+			var newNames = ['Bob', 'Anderson', 'The Lizard'];
+
+			$('.changing').click(function (){
+				runTheLoop();
+			});
+
+			function runTheLoop () {
+				$( ".change-it" ).each(function( index, element ) {
+
+					// The each function provides 2 arguments - index & element
+				  console.log(index); // index represents a number
+				  console.log(element); // element represents all the matched elements found in the loop
+
+
+							if (newNames[index] === newNames[0]){
+								$(element).fadeOut('slow', function(){
+									$(element).text(newNames[index]);
+									$(element).fadeIn('slow', function(){
+									});
+								});
+							}
+							if (newNames[index] === newNames[1]){
+								setTimeout(function(){
+									$(element).fadeOut('slow', function(){
+										$(element).text(newNames[index]);
+										$(element).fadeIn('slow', function(){
+										});
+									});
+								}, 1500);
+							}
+							if (newNames[index] === newNames[2]){
+								setTimeout(function(){
+									$(element).fadeOut('slow', function(){
+										$(element).text(newNames[index]);
+										$(element).fadeIn('slow', function(){
+										});
+									});
+								}, 3000);
+							}
+				}); // change-it each function ENDS
+			} // runTheLoopFunction ENDS
+
+
+		}); // Document Ready ENDS
+
+
+	</script>
+</body>
+</html>

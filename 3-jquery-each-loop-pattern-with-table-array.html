@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Loops</title>
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<style>
+		/* CSS Here */
+		table {
+			margin: 4em;
+			width: 80% !important;
+		}
+	</style>
+</head>
+<body>
+
+	<table class="table">
+	  <thead>
+	    <tr>
+	      <th scope="col">#</th>
+	      <th scope="col">First</th>
+	      <th scope="col">Last</th>
+	      <th scope="col">Handle</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <th scope="row">1</th>
+	      <td class="change-it">Mark</td>
+	      <td>Otto</td>
+	      <td>@mdo</td>
+	    </tr>
+	    <tr>
+	      <th scope="row">2</th>
+	      <td>Jacob</td>
+	      <td class="change-it">Thornton</td>
+	      <td>@fat</td>
+	    </tr>
+	    <tr>
+	      <th scope="row">3</th>
+	      <td>Larry</td>
+	      <td class="change-it">the Bird</td>
+	      <td>@twitter</td>
+	    </tr>
+	  </tbody>
+	</table>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+	<script>
+	// More info at: https://api.jquery.com/each/
+
+	// **Task -- A. Use the index effectively to change the names of the 3 'change-it'
+	// classes above. Do it all within the .each() loop.
+		$(document).ready(function(){
+
+			// Clue, the array index will relate directly to the following .each loop index
+			var newNames = ['Bob', 'Anderson', 'The Lizard'];
+
+			$( ".change-it" ).each(function( index, element ) {
+				// The each function provides 2 arguments - index & element
+			  console.log(index); // index represents a number
+			  console.log(element); // element represents all the matched elements found in the loop
+				$(element).text(newNames[index]);
+
+			});
+
+
+		}); // Document Ready ENDS
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Each Pattern Example</title>
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<style>
+		/* CSS Here */
+		ul {
+			margin: 25px;
+			border: 1px solid;
+		}
+		ul li {
+			font-size: 44px;
+			font-weight: 400;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li class="target">One</li>
+		<li>Two</li>
+		<li class="target">Three</li>
+		<li>Four</li>
+		<li class="target">Five</li>
+		<li>Six</li>
+		<li>Seven</li>
+		<li class="target">Eight</li>
+		<li>Nine</li>
+		<li class="target">Ten</li>
+	</ul>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+	<script>
+	// More info at: https://api.jquery.com/each/
+	// Using the jQuery .each method, this allows coders to easily loop through items
+	// in html/DOM.
+
+		// More info at: https://api.jquery.com/each/
+		// Using the jQuery .each method, this allows coders to easily loop through items
+		// in html/DOM.
+			$(document).ready(function(){
+
+				$( "li" ).each(function( index, element ) {
+					// The each function provides 2 arguments - index & element
+				  console.log(index); // index represents a number
+				  console.log(element); // element represents all the matched elements found in the loop
+				});
+
+			}); // Document Ready ENDS
+
+	</script>
+</body>
+</html>
