@@ -66,10 +66,10 @@
 			var animals = ['lion', 'monkey', 'giraffe', 'whale', 'elephant', 'dog'];
 			var cities = ['Wellington', 'Toronto', 'Ohio', 'Manila', 'Brisbane', 'Paris'];
 			var fishes = ['Orange Roughy', 'John Dory', 'Chinook Salmon', 'Arripis Trutta', 'Red Gurnard', 'Yellowtail Amberjack'];
+			var myRating = ['Not my favourite', "It's Alright...", 'Meh', "It's Nice", 'WOW THIS IS GOOD']
 
 			function updateAnimals() {
 				var animalList = document.querySelectorAll('#animals li');
-
 				for (var i = 0; i < animals.length; i++) {
 					// console.log(animals[i]);
 					animalList[i].textContent = animals[i];
@@ -78,7 +78,6 @@
 
 			function updateCities() {
 				var cityList = document.querySelectorAll('#cities li');
-
 				for (var i = 0; i < cities.length; i++) {
 					// console.log(cities[i]);
 					cityList[i].textContent = cities[i];
@@ -88,10 +87,26 @@
 // Task 1 and 2
 			function updateFishes() {
 				var fishList = document.querySelectorAll('#fishes li');
-
 				for (var i = 0; i < fishes.length; i++) {
-					// console.log(cities[i]);
-					fishList[i].textContent = fishes[i];
+					if (fishes[i] === 'Orange Roughy'){
+						fishList[i].textContent = fishes[i] + ' - ' + myRating[1];
+						console.log('WORKING')
+					};
+					if (fishes[i] === 'John Dory'){
+						fishList[i].textContent = fishes[i] + ' - ' + myRating[0];
+					}
+					if (fishes[i] === 'Chinook Salmon'){
+						fishList[i].textContent = fishes[i] + ' - ' + myRating[2];
+					}
+					if (fishes[i] === 'Arripis Trutta'){
+						fishList[i].textContent = fishes[i] + ' - ' + myRating[4];
+					}
+					if (fishes[i] === 'Red Gurnard'){
+						fishList[i].textContent = fishes[i] + ' - ' + myRating[3];
+					}
+					if (fishes[i] === 'Yellowtail Amberjack'){
+						fishList[i].textContent = fishes[i] + ' - ' + myRating[4];
+					};
 				}
 			}
 
@@ -105,8 +120,6 @@
 				var arrayMix = [1, 2, 3, 'hello ', 12, 55, 'this ', ' is', ' a', true, 89, 'string.', false];
 				var paraSpans = document.querySelectorAll('#para span');
 				console.log(paraSpans);
-
-
 				for (var i = 0; i < arrayMix.length; i++) {
 					// task 1
 					// var numbers = !isNaN(arrayMix[i])
@@ -126,10 +139,14 @@
 					var numbers = isNaN(arrayMix[i])
 					if (numbers && arrayMix[i] != true && arrayMix[i] != false) {
 							console.log(paraSpans[i]);
-							paraSpans[i].textContent = arrayMix[i];
+							// paraSpans[i].textContent = arrayMix[i];
+							// paraSpans[i].innerHtml = arrayMix[i];
+							// paraSpans[i].innerText = arrayMix[i];
+							// paraSpans[i].outerHtml = arrayMix[i];
+							// paraSpans[i].outerText = arrayMix[i];
 					};
-
 				};
+
 			});
 
 
