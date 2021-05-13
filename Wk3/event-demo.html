@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<style>
+		.div-a,
+		.div-b,
+		.div-c,
+		.div-d {
+			background-color: #efefef;
+			margin: 15px;
+			width: 250px;
+			height: 250px;
+			float: left;
+			font-size: 35px;
+		}
+		.holder {
+			overflow: auto;
+		}
+		button.btn {
+			display: block;
+			width: 140px;
+			margin: 0 auto;
+		}
+	</style>
+	<title>Event Objects</title>
+</head>
+<body>
+	<div class="holder">
+		<div class="div-a">DIV A</div>
+		<div class="div-b">DIV B</div>
+		<div class="div-c">DIV C</div>
+		<div class="div-d">DIV D</div>
+	</div>
+	<button class="btn btn-primary">Click Me</button>
+	<script>
+	// (function(){
+	// }())
+
+		var getBtn = document.querySelector('.btn');
+		var divA = document.querySelector('.div-a');
+		var divB = document.querySelector('.div-b');
+		var divC = document.querySelector('.div-c');
+		var divD = document.querySelector('.div-d');
+
+		// getBtn.addEventListener('click', clickedBtn, false)
+		// function clickedBtn(){
+		// 	divA.style.backgroundColor = 'turquoise';
+		// 	divB.style.width = '50%';
+		// 	divC.style.opacity = '0.2';
+		// 	divD.style.backgroundColor = 'rgb(225, 170, 255)'
+		// }
+
+		// Vanilla event listener with a function (event, function, true/false)
+		divA.addEventListener('click', clicked, false);
+		divB.addEventListener('click', clicked, false);
+
+		divC.addEventListener('click', clickedC, false);
+		divD.addEventListener('click', clickedD, false);
+
+
+		// This function has one parameter, e/event. This functions hides divA&B when clicked
+		function clicked(e){
+			// e = MouseEvent
+			console.dir(e.target);
+			var element = e.target
+			element.style.display = 'none'
+		};
+
+		// These functions are just being called with the addEventListener
+		function clickedC(){
+			console.log('Clicked C');
+			divC.style.backgroundColor = 'rgb(111, 199, 255)';
+		};
+		function clickedD(){
+			console.log('Clicked D');
+			divD.style.backgroundColor = 'rgb(225, 170, 255)';
+		};
+	</script>
+</body>
+</html>
