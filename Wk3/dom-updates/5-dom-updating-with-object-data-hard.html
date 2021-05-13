@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<style>
+		/* CSS Here */
+		table {
+			margin: 4em;
+			width: 80% !important;
+		}
+		.wrapper {
+			text-align: center;
+		}
+		button {
+			margin-top: 25px;
+		}
+
+		.bounce-go {
+		  animation: bounce 1s infinite alternate;
+		  -webkit-animation: bounce 1s infinite alternate;
+		}
+
+		@keyframes bounce {
+		  from {
+		    transform: translateY(0px);
+		  }
+		  to {
+		    transform: translateY(-15px);
+		  }
+		}
+		@-webkit-keyframes bounce {
+		  from {
+		    transform: translateY(0px);
+		  }
+		  to {
+		    transform: translateY(-15px);
+		  }
+		}
+	</style>
+</head>
+<body>
+
+	<table class="table">
+	  <thead>
+	    <tr>
+	      <th scope="col title">#</th>
+	      <th scope="col title">First</th>
+	      <th scope="col title">Nick Name</th>
+	      <th scope="col title">Handle</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr class="first-row">
+	      <th scope="row" id="one">1</th>
+	      <td class="first-name captain">Mark</td>
+	      <td>Otto</td>
+	      <td>@mdo</td>
+	    </tr>
+	    <tr class="second-row">
+	      <th scope="row" id="two">2</th>
+	      <td class="first-name captain">Jacob</td>
+	      <td>Thornton</td>
+	      <td>@fat</td>
+	    </tr>
+	    <tr class="third-row">
+	      <th scope="row" id="three">3</th>
+	      <td class="first-name criminal">Larry</td>
+	      <td>the Bird</td>
+	      <td>@brd01</td>
+	    </tr>
+	    <tr class="fourth-row">
+	      <th scope="row" id="four">4</th>
+	      <td class="first-name criminal">Al</td>
+	      <td>the Pizza</td>
+	      <td>@pzr</td>
+	    </tr>
+	    <tr class="fifth-row">
+	      <th scope="row" id="five">5</th>
+	      <td class="first-name">Sarah</td>
+	      <td>the Icecream Killer</td>
+	      <td>@ICKream</td>
+	    </tr>
+	    <tr class="sixth-row">
+	      <th scope="row" id="six">6</th>
+	      <td class="first-name">Harold</td>
+	      <td>the Library Dude</td>
+	      <td>@LibbyDude</td>
+	    </tr>
+	  </tbody>
+	</table>
+
+	<div class="wrapper">
+		<!-- A bootstrap button -->
+		<button type="button" class="btn btn-primary" id="update">Update Names</button>
+	</div>
+	
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+	<script>
+
+	// ***Task A: Extra Can you make a function that loops through the first-name html cells and 
+	// loops through the object to update the text
+
+		$(document).ready(function(){
+
+			// Get all the first name nodes
+			var getTitleNames = document.querySelectorAll('.first-name');
+			
+			// Get the button
+			var button = document.getElementById('update');
+
+			// The new name data
+			var newNamesData = {
+				Mark: 'Marcus',
+				Jacob: 'Jake',
+				Larry: 'Lazza',
+				Al: 'Albert',
+				Sarah: 'Sara',
+				Harold: 'Harry'
+			}
+
+			/*=========================================================================
+			=            3 Ways of doing a basic click event in javascript            =
+			=========================================================================*/
+
+			// 1. Basic vanilla js to listen for a button click, then run the function
+			// no parentheses needed here:
+			button.onclick = updateTable;
+
+			// 2. Another common vanilla js click event pattern, we will cover this next week:
+			// button.addEventListener('click', function(){
+			// 	updateTable();
+			// }, false);
+
+			// 3. or ... the jQuery way:
+			// $('#update').click(function(){
+			//   updateTable();
+			//  });
+
+			function updateTable () {
+
+				// New kind of loop for looping over an object -- Tricky, good challenge!
+
+				// https://stackoverflow.com/questions/684672/how-do-i-loop-through-or-enumerate-a-javascript-object
+
+				var i = 0;
+
+
+			} // function ENDS
+
+
+		}); // Document Ready ENDS
+
+	</script>
+</body>
+</html>

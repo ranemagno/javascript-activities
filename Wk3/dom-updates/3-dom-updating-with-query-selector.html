@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<style>
+		/* CSS Here */
+		table {
+			margin: 4em;
+			width: 80% !important;
+		}
+		.wrapper {
+			text-align: center;
+		}
+		button {
+			margin-top: 25px;
+		}
+
+		.bounce-go {
+		  animation: bounce 1s infinite alternate;
+		  -webkit-animation: bounce 1s infinite alternate;
+		}
+
+		@keyframes bounce {
+		  from {
+		    transform: translateY(0px);
+		  }
+		  to {
+		    transform: translateY(-15px);
+		  }
+		}
+		@-webkit-keyframes bounce {
+		  from {
+		    transform: translateY(0px);
+		  }
+		  to {
+		    transform: translateY(-15px);
+		  }
+		}
+	</style>
+</head>
+<body>
+
+	<table class="table">
+	  <thead>
+	    <tr>
+	      <th scope="col title">#</th>
+	      <th scope="col title">First</th>
+	      <th scope="col title">Nick Name</th>
+	      <th scope="col title">Handle</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr class="first-row">
+	      <th scope="row" id="one">1</th>
+	      <td class="first-name captain">Mark</td>
+	      <td>Otto</td>
+	      <td>@mdo</td>
+	    </tr>
+	    <tr class="second-row">
+	      <th scope="row" id="two">2</th>
+	      <td class="first-name captain">Jacob</td>
+	      <td>Thornton</td>
+	      <td>@fat</td>
+	    </tr>
+	    <tr class="third-row">
+	      <th scope="row" id="three">3</th>
+	      <td class="first-name criminal">Larry</td>
+	      <td>the Bird</td>
+	      <td>@brd01</td>
+	    </tr>
+	    <tr class="fourth-row">
+	      <th scope="row" id="four">4</th>
+	      <td class="first-name criminal">Al</td>
+	      <td>the Pizza</td>
+	      <td>@pzr</td>
+	    </tr>
+	    <tr class="fifth-row">
+	      <th scope="row" id="five">5</th>
+	      <td class="first-name">Sarah</td>
+	      <td>the Icecream Killer</td>
+	      <td>@ICKream</td>
+	    </tr>
+	    <tr class="sixth-row">
+	      <th scope="row" id="six">6</th>
+	      <td class="first-name">Harold</td>
+	      <td>the Library Dude</td>
+	      <td>@LibbyDude</td>
+	    </tr>
+	  </tbody>
+	</table>
+
+	<div class="wrapper">
+		<!-- A bootstrap button -->
+		<button type="button" class="btn btn-primary" id="update" onclick="promoteCaptainsWithColor()">Promote Captains</button>
+		<!-- A bootstrap button -->
+		<button type="button" class="btn btn-primary" id="criminalsPay" onclick="removeCriminals()">Demote Criminals</button>
+	</div>
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+	<script>
+
+	// ***Task A: Add a click event to make the promoteCaptainsWithColor function happen after a click
+	// ***Task B: Write another function that removes the criminals from the list 'querySelectorAll'
+
+		// $(document).ready(function(){
+
+			// We can use a combination of selectors to find a match in the DOM, dots are back sigh....
+			// query selector finds the first match, then stops
+			var getFirstCaptain = document.querySelector('.first-row .captain');
+
+			// querySelector All will put all of the found selectors into an array for use
+			var getAllCaptains = document.querySelectorAll('.captain');
+
+			// This will show us the array of elements
+			console.log(getFirstCaptain);
+			console.log(getAllCaptains);
+
+			// Let's spin through that list with a for loop...
+			for (var i = 0; i < getAllCaptains.length; i++) {
+				// Looking at some of the node properties, remember to use console.dir if you want to find properties....
+				// console.log(getAllCaptains[i]);
+				// console.log(getAllCaptains[i].classList);
+				// console.log(getAllCaptains[i].parentElement);
+				// console.log(getAllCaptains[i].innerText);
+			};
+
+			function promoteCaptainsWithColor () {
+				// Let's spin through that list with a for loop...
+				for (var i = 0; i < getAllCaptains.length; i++) {
+					// Looking at some of the node properties, remember to use console.dir if you want to find properties....
+					getAllCaptains[i].style.backgroundColor = '#efefef';
+					getAllCaptains[i].style.fontWeight = 900;
+					// No dot on the class here sigh....this will trigger the animation above
+					getAllCaptains[i].classList.add('bounce-go');
+				};
+			}
+
+// START TASK ATTEMPT ----------------------------------------------------------
+			function removeCriminals() {
+				var getAllCriminals =  document.querySelectorAll('.criminal');
+				var thirdRow = document.querySelector('.third-row');
+				var fourthRow = document.querySelector('.fourth-row');
+
+				thirdRow.style.display = "none";
+				fourthRow.style.display = "none";
+
+				// console.log(getAllCriminals);
+				// for (var i = 0; i < getAllCriminals.length; i++) {
+				// 	getAllCriminals[i].style.display = "none";
+				// }
+			}
+// END TASK ATTEMPT ------------------------------------------------------------
+
+		// }); // Document Ready ENDS
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<style>
+		/* CSS Here */
+		table {
+			margin: 4em;
+			width: 80% !important;
+		}
+		.wrapper {
+			text-align: center;
+		}
+		button {
+			margin-top: 25px;
+		}
+	</style>
+</head>
+<body>
+
+	<table class="table">
+	  <thead>
+	    <tr>
+	      <th scope="col title">#</th>
+	      <th scope="col title">First</th>
+	      <th scope="col title">Nick Name</th>
+	      <th scope="col title">Handle</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <th scope="row" id="one">1</th>
+	      <td class="first-name">Mark</td>
+	      <td>Otto</td>
+	      <td>@mdo</td>
+	    </tr>
+	    <tr>
+	      <th scope="row" id="two">2</th>
+	      <td class="first-name">Jacob</td>
+	      <td>Thornton</td>
+	      <td>@fat</td>
+	    </tr>
+	    <tr>
+	      <th scope="row" id="three">3</th>
+	      <td class="first-name">Larry</td>
+	      <td>the Bird</td>
+	      <td>@brd01</td>
+	    </tr>
+	    <tr>
+	      <th scope="row" id="four">4</th>
+	      <td class="first-name">Al</td>
+	      <td>the Pizza</td>
+	      <td>@pzr</td>
+	    </tr>
+	    <tr>
+	      <th scope="row" id="five">5</th>
+	      <td class="first-name">Sarah</td>
+	      <td>the Icecream Killer</td>
+	      <td>@ICKream</td>
+	    </tr>
+	    <tr>
+	      <th scope="row" id="six">6</th>
+	      <td class="first-name">Harold</td>
+	      <td>the Library Dude</td>
+	      <td>@LibbyDude</td>
+	    </tr>
+	  </tbody>
+	</table>
+
+	<div class="wrapper">
+		<!-- A bootstrap button -->
+		<button type="button" class="btn btn-primary" id="update" onclick="updateDOM()">Update</button>
+	</div>
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+	<script>
+
+	// ***Task: Write a function that uses a for loop to loop over the getTitles array
+	// and updates the new first names. Clue, try to use the same index counter. Make the change happen
+	// on a button click. I.E. - Call the newly written function on the button click event.
+
+		// $(document).ready(function(){
+
+			var newFirstNames = ['Marcus', 'Jake', 'Lazza', 'Albert', 'Sara', 'Harry'];
+
+			// If we use getElementsByClassName it will return an array-like-object of nodes with the element/s
+			var getTitles = document.getElementsByClassName('first-name');
+
+			// This will show us the array of elements matching the 'first-name' class
+			console.log(getTitles);
+
+			// Using a for loop to loop over the array items and output them to the console
+			for (var i = 0; i < getTitles.length; i++) {
+				// console.dir(getTitles[i]);
+				// Here we are making each title bold
+				getTitles[i].style.fontWeight = 900;
+				// What is this code doing?
+				getTitles[i].style.fontSize = '1' + i + 'px';
+			};
+
+// START TASK ATTEMPT ----------------------------------------------------------
+			function updateDOM(){
+				for (var i = 0; i < getTitles.length; i++) {
+					console.log(newFirstNames[i]);
+					getTitles[i].textContent = newFirstNames[i];
+				}
+			}
+// END TASK ATTEMPT ------------------------------------------------------------
+
+
+
+		// }); // Document Ready ENDS
+
+	</script>
+</body>
+</html>

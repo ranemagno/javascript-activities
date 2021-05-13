@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<style>
+		/* CSS Here */
+		table {
+			margin: 4em;
+			width: 80% !important;
+		}
+		.wrapper {
+			text-align: center;
+		}
+		button {
+			margin-top: 25px;
+		}
+	</style>
+</head>
+<body>
+
+	<table class="table">
+	  <thead>
+	    <tr>
+	      <th scope="col title">#</th>
+	      <th scope="col title">First</th>
+	      <th scope="col title">Last</th>
+	      <th scope="col title">Handle</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <th scope="row" id="one">1</th>
+	      <td class="change-it">Mark</td>
+	      <td>Otto</td>
+	      <td>@mdo</td>
+	    </tr>
+	    <tr>
+	      <th scope="row" id="two">2</th>
+	      <td>Jacob</td>
+	      <td class="change-it">Thornton</td>
+	      <td>@fat</td>
+	    </tr>
+	    <tr>
+	      <th scope="row" id="three">3</th>
+	      <td>Larry</td>
+	      <td class="change-it">the Bird</td>
+	      <td>@twitter</td>
+	    </tr>
+	  </tbody>
+	</table>
+
+	<div class="wrapper">
+		<!-- A bootstrap button -->
+		<button type="button" class="btn btn-primary" id="update" onclick="changeColorOfNumberThree()">Update</button>
+	</div>
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+	<script>
+
+	// ***Task: Make Another function declaration that is called from clicking the button above that
+	// changes the color of number #three to green and increases the font size of #three to 20px. Use vanilla javascript.
+
+		// $(document).ready(function(){
+
+			// Get element with id
+			var getNumberTwo = document.getElementById('two');
+			// Log the element to make sure we have it
+			console.log(getNumberTwo);
+
+			// Create a function for changing of color
+			function changeColorOfNumberTwo () {
+				// Get element variable, go to style property, change the color
+				getNumberTwo.style.color = 'red';
+				console.dir(getNumberTwo);
+				getNumberTwo.style.padding = '55px';
+			}
+			// Call the function
+			changeColorOfNumberTwo();
+
+// TASK ATTEMPT START ----------------------------------------------------------
+			var getNumberThree = document.getElementById('three');
+			function changeColorOfNumberThree() {
+				getNumberThree.style.color = 'green';
+				getNumberThree.style.fontSize = '20px';
+			}
+// TASK ATTEMPT END ------------------------------------------------------------
+
+
+			// or the jQuery way...
+
+			// $('#two').css('color', 'red');
+
+		// }); // Document Ready ENDS
+
+	</script>
+</body>
+</html>
