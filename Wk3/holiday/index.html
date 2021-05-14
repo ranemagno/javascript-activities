@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<style>
+
+	body {
+		padding: 50px;
+	}
+
+	.form-control {
+		width: 15%;
+	}
+
+	label {
+		margin: 25px 0 10px 0;
+	}
+
+	button {
+		margin-top: 15px;
+	}
+
+	</style>
+	<title>Holiday</title>
+</head>
+<body>
+
+	  <div class="form-group">
+	    <label for="nameInput">Name</label>
+	    <input type="text" class="form-control" id="nameInput" placeholder="Insert Name Here">
+	  </div>
+	  <div class="form-group">
+			<label for="holiday">Select Holiday</label>
+			<select class="form-control" id="holiday">
+			  <option>1</option>
+			  <option>2</option>
+			</select>
+	  </div>
+		<div class="form-group">
+			<label for="hotel">Select Hotel</label>
+			<select class="form-control" id="hotel">
+				<option>1</option>
+				<option>2</option>
+			</select>
+		</div>
+	  <button id="bookBtn">Book</button>
+
+	<script src="js/holiday-data.js"></script>
+	<script src="js/custom.js"></script>
+</body>
+</html>
