@@ -12,7 +12,7 @@
 	}
 
 	.form-control {
-		width: 15%;
+		width: 75%;
 	}
 
 	label {
@@ -22,32 +22,71 @@
 	button {
 		margin-top: 15px;
 	}
+	.total-price {
+		background-color: turquoise;
+	}
+	.cont-panel-right {
+		width: 60%;
+		height: 50vh;
+		float: right;
+	}
+	.cont-imgs {
+		display: flex;
+	}
+	.cont-imgs div {
+		/* border: 1px solid black; */
+		margin-right: 1%;
+		width: 150px;
+		height: 150px;
+	}
+	.holiday-img,
+	.hotel-img {
+		background-position: center;
+		background-size: cover;
+	}
 
 	</style>
-	<title>Holiday</title>
+	<title>Holiday Booking</title>
 </head>
 <body>
-
-	  <div class="form-group">
-	    <label for="nameInput">Name</label>
-	    <input type="text" class="form-control" id="nameInput" placeholder="Insert Name Here">
-	  </div>
-	  <div class="form-group">
-			<label for="holiday">Select Holiday</label>
-			<select class="form-control" id="holiday">
-			  <option>1</option>
-			  <option>2</option>
-			</select>
-	  </div>
-		<div class="form-group">
-			<label for="hotel">Select Hotel</label>
-			<select class="form-control" id="hotel">
-				<option>1</option>
-				<option>2</option>
-			</select>
+	<!-- START - row -->
+	<div class="row">
+		<div class="col-md-4">
+		  <div class="form-group">
+		    <label for="nameInput">Name</label>
+		    <input type="text" class="form-control" id="nameInput" placeholder="Insert Name Here">
+		  </div>
+		  <div class="form-group">
+				<label for="holiday">Select Holiday</label>
+				<select class="form-control" id="holiday">
+				  <option>1</option>
+				  <option>2</option>
+				</select>
+		  </div>
+			<div class="form-group">
+				<label for="hotel">Select Hotel</label>
+				<select class="form-control" id="hotel">
+					<option>1</option>
+					<option>2</option>
+				</select>
+			</div>
+		  <button id="bookBtn">Book</button>
 		</div>
-	  <button id="bookBtn">Book</button>
 
+		<!-- START - panel right -->
+		<div class="total-price col">
+			<div class="cont-panel-right">
+				<h1 id="totalDisplay"></h1>
+				<div class="cont-imgs">
+					<div class="holiday-img" id="holidayImg"></div>
+					<div class="hotel-img" id="hotelImg"></div>
+				</div>
+			</div>
+		</div>
+		<!-- END - panel right -->
+
+	</div>
+	<!-- END - row -->
 	<script src="js/holiday-data.js"></script>
 	<script src="js/custom.js"></script>
 </body>
