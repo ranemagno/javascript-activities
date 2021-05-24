@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- Mobile Meta Viewport Needed for Bootstrap -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Bootstrap Layout</title>
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/font-awesome.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<style>
+		/* CSS Here */
+		hr {
+			margin-top: 50px;
+			margin-bottom: 50px;
+		}
+
+		h4 {
+			font-size: 35px;
+		}
+
+		h3 {
+			margin-top: 35px;
+			margin-bottom: 35px;
+			font-weight: 300;
+			text-align: center;
+		}
+
+		.fa {
+			font-size: 65px;
+			cursor: pointer;
+		}
+
+		.fa-plane {
+			font-size: 15px;
+		}
+
+		.contain {
+			width: 70%;
+			margin: 0 auto;
+			margin-top: 3em;
+		}
+
+		.btn-danger {
+		    color: #fff;
+		    background-color: teal;
+		    border-color: teal;
+				border-radius: 0px !important;
+		}
+
+		.col,
+		.col-4,
+		.col-8,
+		.col-1,
+		.col-6,
+		.col-2,
+		.col-xl-6,
+		.col-lg-4,
+		.col-md-6,
+		.col-sm-3,
+		.col-md-3,
+		.col-md-4 {
+			background-color: #efefef;
+			border: 1px solid #333;
+			height: 250px;
+		}
+
+		.no-border {
+			border: none;
+		}
+	</style>
+</head>
+<body>
+
+	<!-- Container Fluid will expand to the full width of the viewport -->
+	<div class="container-fluid">
+
+		<h3>5 PANEL UI</h3>
+
+		<!-- Using a row class will create a new row -->
+	 	<div class="row justify-content-center">
+	 		<div class="col-2 d-flex flex-row justify-content-center align-items-center">
+
+	 			<i class="fa fa-play-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Click to play your favorite song"></i>
+
+	 		</div>
+	 	</div>
+
+ 		<!-- Using a row class will create a new row -->
+ 	 	<div class="row justify-content-center">
+ 	 		<div class="col-2 d-flex flex-row justify-content-center align-items-center">
+ 	 			<i class="fa fa-space-shuttle" aria-hidden="true" data-toggle="tooltip" data-placement="left" title="<i class='fa fa-plane' aria-hidden='true'></i>Click to animate off the screen"></i>
+	 		</div>
+ 	 		<div class="col-2 no-border d-flex flex-row justify-content-center align-items-center">
+				<i class="fa fa-power-off" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Click to turn off UI"></i>
+ 	 		</div>
+ 	 		<div class="col-2 d-flex flex-row justify-content-center align-items-center">
+ 	 			<i class="fa fa-bath" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Click to turn on the shower"></i>
+ 	 		</div>
+ 	 	</div>
+
+ 		<!-- Using a row class will create a new row -->
+ 	 	<div class="row justify-content-center">
+ 	 		<div class="col-2 d-flex flex-row justify-content-center align-items-center">
+ 	 			<i class="fa fa-wpexplorer" aria-hidden="true" data-container="body" data-toggle="popover" data-placement="top" data-content="Look at the sky" data-trigger="hover"></i>
+ 	 		</div>
+ 	 	</div>
+
+	</div>
+	<!-- Container Fluid ENDS -->
+
+	<!-- Modal -->
+		<div class="modal fade" id="colorSelectModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">SELECT A COLOR FOR STANDBY MODE</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<!-- Input Field -->
+						<div class="form-group">
+								<label for="exampleFormControlSelect1">Select a color</label>
+								<select class="form-control" id="selectColor">
+									<option>Blue</option>
+									<option>Red</option>
+									<option>Yellow</option>
+									<option>Green</option>
+									<option>Purple</option>
+								</select>
+							</div>
+						<!-- Input Field ENDS -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" id="standByMode">LAUNCH STANDBY MODE</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Modal ENDS -->
+
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="js/popper.min.js"></script>
+	<!-- Both being sourced from local -->
+	<script src="js/bootstrap.js"></script>
+	<script src="js/1-custom.js"></script>
+</body>
+</html>

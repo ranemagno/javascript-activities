@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Returning Variables</title>
+</head>
+<body>
+  <script>
+// ---------- Different ways to return vars - cloudObj & return ----------------
+
+    // var cloudObj = {}; A way to access vars in functions
+
+    function aFunction() {
+      var hidden = 'I am inside a function';
+      var second = ' today. Today is Tuesday';
+      // cloudObj.hidden = hidden;    Put vars into an object
+      // cloudObj.second = second;
+      return hidden + second;
+    }
+    // aFunction();
+    // console.log(cloudObj);
+    // Accesses variables that you put in the object but does not access the function
+
+    var getReturn = aFunction();
+    // Accesses the return value of the function.
+    console.log('Function a results: ' + getReturn);
+
+// -----------------------------------------------------------------------------
+
+// -------------------- Using return in different ways -------------------------
+
+    function bFunction() {
+      var sentence = ['my ', 'Hello ', 'name ' , 'Rane', 'is ', '.'];
+      // console.log(sentence[1] + sentence[0] + sentence[2] + sentence[4] + sentence[3] + sentence[5]);
+      var senInOrder = sentence[1] + sentence[0] + sentence[2] + sentence[4] + sentence[3] + sentence[5];
+      return senInOrder;
+    }
+    console.log('Function b results: ' + bFunction());
+
+    function cFunction () {
+      // Access the return value from within this function
+      // Add another word to the sentence and then return the final sentence
+      var newSentence = bFunction() + ' wow';
+      return newSentence
+    }
+
+    console.log('Function c results: ' + cFunction());
+
+    function dFunction () {
+      var string = 'a string';
+      return function () {
+        console.log('Hello try to log me.');
+      };
+    }
+    dFunction()();
+    
+// -----------------------------------------------------------------------------
+
+
+
+  </script>
+</body>
+</html>
