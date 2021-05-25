@@ -17,8 +17,13 @@ console.log(window);
 	  $('[data-toggle="popover"]').popover()
 	})
 
+// My modal
+	var powerButton = document.querySelector('.fa-power-off');
+	powerButton.addEventListener('click', showModal, false)
 
-
+	function showModal() {
+		$('.modal').modal('show')
+	}
 
 }());
 // Global Wrapping Function ENDS
