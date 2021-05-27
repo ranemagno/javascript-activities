@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mapbox</title>
+
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
+
+  <style>
+    #map {
+      width: 1000px;
+      height: 1000px;
+    }
+  </style>
+
+</head>
+<body>
+  <div id='map'></div>
+  <button id="queenstown">Queenstown</button>
+  <button id="whakapapa">Whakapapa</button>
+  <button id="ohau">Ohau</button>
+
+  <script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoicnJhbmVpZ2hoIiwiYSI6ImNrcDdleTluczA2OHYycHBpdnRuM3ljMjQifQ.vcdw9EVmQWwO8j4UbfBdmA';
+  var map = new mapboxgl.Map({
+  container: 'map',
+  center: [174.77328269452542, -41.292207121458304],
+  zoom: 9,
+  pitch: 50,
+  bearing: 10,
+  style: 'mapbox://styles/mapbox-map-design/ckhqrf2tz0dt119ny6azh975y'
+  });
+
+  map.on('load', function () {
+    map.addSource('mapbox-dem', {
+      'type': 'raster-dem',
+      'url': 'mapbox://mapbox.mapbox-terrain-dem-v1',
+      'tileSize': 512,
+      'maxzoom': 14
+    });
+    // add the DEM source as a terrain layer with exaggerated height
+    map.setTerrain({ 'source': 'mapbox-dem', 'exaggeration': 1.5 });
+
+    // add a sky layer that will show when the map is highly pitched
+    map.addLayer({
+      'id': 'sky',
+      'type': 'sky',
+      'paint': {
+        'sky-type': 'atmosphere',
+        'sky-atmosphere-sun': [0.0, 0.0],
+        'sky-atmosphere-sun-intensity': 15
+      }
+    });
+  });
+
+  var queenstown = new mapboxgl.Marker()
+  .setLngLat([168.6587815230875, -45.03100792522889])
+  .addTo(map);
+  var whakapapa = new mapboxgl.Marker()
+  .setLngLat([175.55154203887193, -39.18630697670154])
+  .addTo(map);
+  var ohau = new mapboxgl.Marker()
+  .setLngLat([169.7666135318741, -44.19124782133644])
+  .addTo(map);
+
+
+  var btnQueenstown = document.querySelector('#queenstown')
+  btnQueenstown.addEventListener('click', flyToQueenstown, false)
+
+  function flyToQueenstown() {
+    map.flyTo({center: [0, 0], zoom: 9});
+    map.flyTo({
+    center: [168.6587815230875, -45.03100792522889],
+    zoom: 9,
+    speed: 1,
+    curve: 1,
+    easing(t) {
+    return t;
+    }
+    });
+  }
+
+  var btnWhakapapa = document.querySelector('#whakapapa')
+  btnWhakapapa.addEventListener('click', flyToWhakapapa, false)
+
+  function flyToWhakapapa() {
+    map.flyTo({center: [0, 0], zoom: 9});
+    map.flyTo({
+    center: [175.55154203887193, -39.18630697670154],
+    zoom: 9,
+    speed: 1,
+    curve: 1,
+    easing(t) {
+    return t;
+    }
+    });
+  }
+
+
+  var btnOhau = document.querySelector('#ohau')
+  btnOhau.addEventListener('click', flyToOhau, false)
+
+  function flyToOhau() {
+    map.flyTo({center: [0, 0], zoom: 9});
+    map.flyTo({
+    center: [169.7666135318741, -44.19124782133644],
+    zoom: 9,
+    speed: 1,
+    curve: 1,
+    easing(t) {
+    return t;
+    }
+    });
+  }
+
+  </script>
+</body>
+</html>
